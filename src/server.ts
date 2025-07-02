@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import { database } from './config/database';
 import { config } from './config';
 import { globalErrorHandler } from './middleware';
+import routes from './routes';
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.get('/status', (req, res) => {
   });
 });
 
-// TODO: Adicionar rotas dos controllers aqui
+app.use('/', routes);
 
 app.use(globalErrorHandler);
 

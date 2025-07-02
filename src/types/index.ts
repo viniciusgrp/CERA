@@ -24,9 +24,6 @@ export interface ICliente extends Document {
   dataNascimento?: Date;
   contato?: IContato;
   endereco?: IEndereco;
-  totalVeiculos?: number;
-  totalEstofados?: number;
-  totalGasto?: number;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -53,4 +50,42 @@ export interface IEstofado extends Document {
   categoria?: string;
   createdAt?: Date;
   updatedAt?: Date;
+}
+
+export interface CreateVeiculoDTO {
+  marca: string;
+  modelo: string;
+  placa: string;
+  ano: number;
+  cor?: string;
+  categoria?: string;
+}
+
+export interface CreateEstofadoDTO {
+  tipo: string;
+  tecido: string;
+  cor?: string;
+  categoria?: string;
+}
+
+export interface CreateClienteDTO {
+  nome: string;
+  cpf: string;
+  observacoes?: string;
+  dataNascimento?: Date | string;
+  contato?: IContato;
+  endereco?: IEndereco;
+  veiculos?: CreateVeiculoDTO[];
+  estofados?: CreateEstofadoDTO[];
+}
+
+export interface UpdateClienteDTO {
+  nome?: string;
+  cpf?: string;
+  observacoes?: string;
+  dataNascimento?: Date | string;
+  contato?: IContato;
+  endereco?: IEndereco;
+  veiculos?: CreateVeiculoDTO[];
+  estofados?: CreateEstofadoDTO[];
 }

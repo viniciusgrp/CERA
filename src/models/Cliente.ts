@@ -98,21 +98,6 @@ const ClienteSchema = new Schema<ICliente>({
   endereco: {
     type: EnderecoSchema,
     default: {}
-  },
-  totalVeiculos: {
-    type: Number,
-    default: 0,
-    min: 0
-  },
-  totalEstofados: {
-    type: Number,
-    default: 0,
-    min: 0
-  },
-  totalGasto: {
-    type: Number,
-    default: 0,
-    min: 0
   }
 }, {
   timestamps: true,
